@@ -25,7 +25,7 @@ void draw() {
   c2 = color(289, 80, 100);
   for(float i = margin; i <= height - (100 + margin); i += rectHeight + margin){
     for(float j = margin; j <= width - (100 + margin); j += rectWidth + margin){
-      h1 = 300+random(59);
+      h1 = 30+random(59);
       h2 = h1 + 50;
       s = "14.png";
       if(359 < h2){
@@ -39,7 +39,7 @@ void draw() {
   loadPixels();
   for(float i = margin; i <= height - (100 + margin); i += rectHeight + margin){
     for(float j = margin; j <= width - (100 + margin); j += rectWidth + margin){
-      h1 = 309 + random(50);
+      h1 = 20 + random(50);
       h2 = h1 + 30;
       if(359 < h2){
         h2= h1-(h2-h1);
