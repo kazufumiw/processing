@@ -12,7 +12,7 @@ color c2;
 
 
 void setup() {
-  size(1500, 900);
+  size(1280, 768);
   noLoop();
   frameRate(1);
   colorMode(HSB, 360, 100, 100);
@@ -22,7 +22,7 @@ void setup() {
 void draw() {
   for(int i = 0; i < 3; i++){
     for(int j = 0; j < 5; j++){
-      makeRects(0 + 300*j, 0 + 300*i, 300, 300, 8);
+      makeRects(0 + 256*j, 0 + 256*i, 256, 256, 8);
     }
   }
   
@@ -32,8 +32,8 @@ void draw() {
   loadPixels();
   for(int i = 0; i < 3; i++){
     for(int j = 0; j < 5; j++){
-      for(float k = i*300; k < 300+i*300; k++){
-        for(float l = j*300; l < 300+j*300; l++){
+      for(float k = i*256; k < 256+i*256; k++){
+        for(float l = j*256; l < 256+j*256; l++){
           pixels[int(k*width+l)] += color(0, 0, random(0));
         }
       }      
