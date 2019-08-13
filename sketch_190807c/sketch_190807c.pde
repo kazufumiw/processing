@@ -12,7 +12,7 @@ color c2;
 
 
 void setup() {
-  size(980, 620);
+  size(1960, 1240);
   noLoop();
   frameRate(2);
   colorMode(HSB, 360, 100, 100);
@@ -25,7 +25,7 @@ void draw() {
   c2 = color(289, 80, 100);
   for(float i = margin; i <= height - (100 + margin); i += rectHeight + margin){
     for(float j = margin; j <= width - (100 + margin); j += rectWidth + margin){
-      h1 = 30+random(59);
+      h1 = 210+random(59);
       h2 = h1 + 50;
       s = "14.png";
       if(359 < h2){

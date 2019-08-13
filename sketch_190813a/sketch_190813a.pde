@@ -15,8 +15,8 @@ void setup() {
   size(1280, 768);
   //noLoop();
   frameRate(1);
-  colorMode(HSB, 360, 100, 100);
-  background(215, 50, 20);
+  colorMode(RGB, 255, 255, 255);
+  background(20, 20, 50);
 }
 
 void draw() {
@@ -34,13 +34,13 @@ void draw() {
     for(int j = 0; j < 5; j++){
       for(float k = i*256; k < 256+i*256; k++){
         for(float l = j*256; l < 256+j*256; l++){
-          pixels[int(k*width+l)] += color(0, 0, random(5));
+          pixels[int(k*width+l)] += color(random(5), random(5), random(5));
         }
       }      
     }
   }
   updatePixels();
-  save("work_" + str(frameCount+61) + ".png");
+  save("1work_" + str(frameCount) + ".png");
   
 }
 void makeRects(float posX, float posY, float local_rectWidth, float local_rectHeight, int count){
@@ -50,11 +50,11 @@ void makeRects(float posX, float posY, float local_rectWidth, float local_rectHe
     //strokeWeight(count);
     if(random(1) < 0.8){
       //gradRect(color(230,20,90), color(280,20,90), 1, posX, posY, local_rectWidth, local_rectHeight, false);
-      gradRect(color(240+random(20),90,20+random(10)), color(220+random(20),90,15+random(10)), 1, posX, posY, local_rectWidth, local_rectHeight, false);
+      gradRect(color(220+random(30),220+random(30),220+random(30)), color(220+random(30),220+random(30),220+random(30)), 1, posX, posY, local_rectWidth, local_rectHeight, false);
     }else if(random(1) < 0.5){
-      gradRect(color(200+random(20),100,70+random(20)), color(250+random(20),100,90), 1, posX, posY, local_rectWidth, local_rectHeight, false);
+      gradRect(color(30+random(40),169+random(40),180+random(40)), color(30+random(40),169+random(40),180+random(40)), 1, posX, posY, local_rectWidth, local_rectHeight, false);
     }else{
-      gradRect(color(290+random(20),100,70+random(20)), color(320+random(20),100,90), 1, posX, posY, local_rectWidth, local_rectHeight, false);
+      gradRect(color(250,210+random(40),33+random(40)), color(250,210+random(40),33+random(40)), 1, posX, posY, local_rectWidth, local_rectHeight, false);
     }
      count--;
     
