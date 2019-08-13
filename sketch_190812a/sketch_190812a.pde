@@ -51,7 +51,7 @@ void makeRects(float posX, float posY, float local_rectWidth, float local_rectHe
       //gradRect(color(230,20,90), color(280,20,90), 1, posX, posY, local_rectWidth, local_rectHeight, false);
       gradRect(color(230,90,20), color(230,90,20), 1, posX, posY, local_rectWidth, local_rectHeight, false);
     }else if(random(1) < 0.5){
-      gradRect(color(240,100,90), color(260,100,90), 1, posX, posY, local_rectWidth, local_rectHeight, false);
+      gradRect(color(210,100,90), color(260,100,90), 1, posX, posY, local_rectWidth, local_rectHeight, false);
     }else{
       gradRect(color(300,100,90), color(330,100,90), 1, posX, posY, local_rectWidth, local_rectHeight, false);
     }
