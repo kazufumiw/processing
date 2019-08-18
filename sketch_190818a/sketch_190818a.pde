@@ -7,16 +7,19 @@ String s = "1.png";
 float h1;
 float h2;
 
-color c1;
-color c2;
-
+color c1_1;
+color c1_2;
+color c2_1;
+color c2_2;
+color bg_1;
+color bg_2;
 
 void setup() {
   size(1280, 768);
   //noLoop();
   frameRate(1);
-  colorMode(HSB, 360, 100, 100);
-  background(215, 50, 20);
+  colorMode(RGB, 255, 255, 255);
+  background(20, 20, 50);
 }
 
 void draw() {
@@ -34,27 +37,49 @@ void draw() {
     for(int j = 0; j < 5; j++){
       for(float k = i*256; k < 256+i*256; k++){
         for(float l = j*256; l < 256+j*256; l++){
-          pixels[int(k*width+l)] += color(0, 0, random(5));
+          pixels[int(k*width+l)] += color(random(20), random(20), random(20));
         }
       }      
     }
   }
   updatePixels();
-  save("work_" + str(frameCount+100) + ".png");
+  save("1work_" + str(frameCount) + ".png");
   
 }
 void makeRects(float posX, float posY, float local_rectWidth, float local_rectHeight, int count){
   if(count != 0){
-    print(count);
-    //stroke(305, 0,80);
-    //strokeWeight(count);
-    if(random(1) < 0.6){
+    
+    bg_1 = color(0 + random(0),
+                 0 + random(30),
+                 0 + random(10));
+                 
+    bg_2 = color(0 + random(0),
+                 0 + random(10),
+                 0 + random(50));
+                 
+    c1_1 = color(46 + random(40),
+                 172 + random(40),
+                 145 + random(40));
+                 
+    c2_1 = color(46 + random(40),
+                 172 + random(40),
+                 145 + random(40));
+                 
+    c1_2 = color(3 + random(40),
+                 2 + random(40),
+                 29 + random(40));
+                 
+    c2_2 = color(3 + random(40),
+                 2 + random(40),
+                 29 + random(40));
+    
+    if(random(1) < 0.7){
       //gradRect(color(230,20,90), color(280,20,90), 1, posX, posY, local_rectWidth, local_rectHeight, false);
-      gradRect(color(240+random(20),90,20+random(10)), color(220+random(20),90,15+random(10)), 1, posX, posY, local_rectWidth, local_rectHeight, false);
-    }else if(random(1) < 0.5){
-      gradRect(color(200+random(20),100,70+random(20)), color(250+random(20),100,90), 1, posX, posY, local_rectWidth, local_rectHeight, false);
+      gradRect(bg_1, bg_2, 1, posX, posY, local_rectWidth, local_rectHeight, false);
+    }else if(random(1) < 0.7){
+      gradRect(c1_1, c1_2, 1, posX, posY, local_rectWidth, local_rectHeight, false);
     }else{
-      gradRect(color(290+random(20),100,70+random(20)), color(320+random(20),100,90), 1, posX, posY, local_rectWidth, local_rectHeight, false);
+      gradRect(c2_1, c2_2, 1, posX, posY, local_rectWidth, local_rectHeight, false);
     }
      count--;
     
