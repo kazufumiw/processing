@@ -41,9 +41,11 @@ void draw() {
   
   seed_2 += 0.05;
   seed_4 += 0.05;
+  /*
   if(frameCount < 300){
     save(String.format("%06d", frameCount) + ".png");
   }
+  */
 }
 
 
