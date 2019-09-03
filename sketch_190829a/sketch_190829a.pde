@@ -77,10 +77,11 @@ void draw() {
   
   seed_3 += 0.02;
   
-  
+  /*
   if(frameCount < 300){
     save(String.format("%06d", frameCount) + ".png");
   }
+  */
   
   
 }
