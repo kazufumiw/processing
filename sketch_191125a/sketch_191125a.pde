@@ -11,7 +11,7 @@ void setup(){
   stroke(0, 0, 100, 20);
   strokeWeight(1.0);
   blendMode(ADD);
-  hello = loadFont("STXingkaiSC-Bold-48.vlw"); 
+  hello = loadFont("DFWaWaTC-W5-48.vlw"); 
 }
 
 void draw(){
