@@ -55,7 +55,7 @@ function draw(){
 
 function draw(){
     
-    background(0)
+    background(2,5*pow(noise(frameCount*0.2), 2),5*pow(noise(frameCount*0.2), 2))
     let r = 200.0
     let sr = 12.0
     let c = slider_c.value()//14.1//*noise(frameCount/500.0)
@@ -71,7 +71,7 @@ function draw(){
         let y = sqrt(pow(r,2) - pow(2*r*i/ball_n - r, 2))*sin(2*PI*c*i/ball_n + frameCount*0.05)
         let z = 1*(2*r*i/ball_n - r)
 
-        y = map(y, -r*0.7, 1.0*r, 0.0, 1)
+        y = map(y, -r*1.0, 1.0*r, 0.0, 1)
         let x_next = sqrt(pow(r,2) - pow(2*r*(i+1)/ball_n - r, 2))*cos(2*PI*c*(i+1)/ball_n + frameCount*0.05)
         let z_next = 1*(2*r*(i+1)/ball_n - r)
         let x_vn = sqrt(pow(r,2) - pow(2*r*(i+ball_n/c)/ball_n - r, 2))*cos(2*PI*c*(i+ball_n/c)/ball_n + frameCount*0.05)
