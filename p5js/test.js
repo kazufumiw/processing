@@ -55,7 +55,7 @@ function draw(){
 
 function draw(){
     
-    background(2,5*pow(noise(frameCount*0.2), 2),5*pow(noise(frameCount*0.2), 2))
+    background(2,3*pow(noise(frameCount*0.2), 2),3*pow(noise(frameCount*0.2), 2))
     let r = 200.0
     let sr = 12.0
     let c = slider_c.value()//14.1//*noise(frameCount/500.0)
