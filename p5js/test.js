@@ -8,11 +8,11 @@ function setup(){
     drawingContext.shadowBlur = 40;
     drawingContext.shadowColor = color(0,255,255);  
     
-    slider_c = createSlider(0, 100, 1000);
+    slider_c = createSlider(0, 100, 20, 0.1);
     slider_c.position(50, 50);
     slider_c.style('width', '480px');
 
-    slider_n = createSlider(0, 50, 250);
+    slider_n = createSlider(0, 50, 10, 1);
     slider_n.position(50, 70);
     slider_n.style('width', '480px');
 
