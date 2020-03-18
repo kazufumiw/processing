@@ -27,9 +27,10 @@ function draw(){
         fill(255);
         let x = sqrt(pow(r,2) - pow(2*r*i/ball_n - r, 2))*cos(2*PI*c*i/ball_n + frameCount*0.05);
         let y = sqrt(pow(r,2) - pow(2*r*i/ball_n - r, 2))*sin(2*PI*c*i/ball_n + frameCount*0.05);
+        y = map(y, -r*1.0, 1.0*r, 0.0, 1);
         let z = 1*(2*r*i/ball_n - r);
 
-        y = map(y, -r*1.0, 1.0*r, 0.0, 1);
+         
         let x_next = sqrt(pow(r,2) - pow(2*r*(i+1)/ball_n - r, 2))*cos(2*PI*c*(i+1)/ball_n + frameCount*0.05);
         let z_next = 1*(2*r*(i+1)/ball_n - r);
         let x_vn = sqrt(pow(r,2) - pow(2*r*(i+ball_n/c)/ball_n - r, 2))*cos(2*PI*c*(i+ball_n/c)/ball_n + frameCount*0.05);
@@ -43,10 +44,16 @@ function draw(){
         stroke(255*y,255*y,255*y);
         drawingContext.shadowColor = color(0,255*y,255*y);
         point(x, z);
+        if(i == ball_n-1){
+            point(x_next, z_next);
+        }
         point(x_vn, z_vn);
         strokeWeight(12*pow(noise(frameCount*0.2), 3));
         line(x, z, x_next, z_next);
         line(x, z, x_vn, z_vn);
         line(x_vn, z_vn, x_vn_next, z_vn_next);
+        
+        
+        
     }
 }
