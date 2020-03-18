@@ -5,7 +5,7 @@ function setup(){
     
     drawingContext.shadowOffsetX = width*3*0;
     drawingContext.shadowOffsetY = height*3*0;
-    drawingContext.shadowBlur = 40;
+    drawingContext.shadowBlur = 60;
     drawingContext.shadowColor = color(0,255,255);  
     
     slider_c = createSlider(0, 100, 20, 0.1);
@@ -55,7 +55,7 @@ function draw(){
 
 function draw(){
     
-    background(2,3*pow(noise(frameCount*0.2), 2),3*pow(noise(frameCount*0.2), 2));
+    background(2,20*pow(noise(frameCount*0.2), 2),20*pow(noise(frameCount*0.2), 2));
     let r = 200.0;
     let sr = 12.0;
     let c = slider_c.value();//14.1//*noise(frameCount/500.0)
