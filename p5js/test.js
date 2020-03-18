@@ -1,8 +1,7 @@
 function setup(){
     blendMode(ADD);
     createCanvas(800, 800);
-    background(0,0,0);
-    
+
     drawingContext.shadowOffsetX = width*3*0;
     drawingContext.shadowOffsetY = height*3*0;
     drawingContext.shadowBlur = 60;
@@ -17,7 +16,6 @@ function setup(){
     slider_n.style('width', '480px');
 }
 function draw(){
-    
     background(2,20*pow(noise(frameCount*0.2), 2),20*pow(noise(frameCount*0.2), 2));
     let r = 200.0;
     let c = slider_c.value();//14.1//*noise(frameCount/500.0)
@@ -25,7 +23,6 @@ function draw(){
     let w = width * 0.5;
     let h = height * 0.5;
     translate(w, h);
-    
     for(let i = 0; i < ball_n; i++){
         fill(255);
         let x = sqrt(pow(r,2) - pow(2*r*i/ball_n - r, 2))*cos(2*PI*c*i/ball_n + frameCount*0.05);
