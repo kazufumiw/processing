@@ -1,5 +1,5 @@
 function setup(){
-    blendMode(ADD);
+    //blendMode(ADD);
     createCanvas(800, 800);
     background(0,0,0);
     
