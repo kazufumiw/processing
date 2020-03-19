@@ -1,5 +1,5 @@
 function setup(){
-    //blendMode(ADD);
+    blendMode(ADD);
     createCanvas(800, 800);
 
     drawingContext.shadowOffsetX = width*3*0;
