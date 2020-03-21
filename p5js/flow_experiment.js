@@ -15,29 +15,17 @@ function reset(){
 
 function addBalls(){
     n = 10.0
-    /*
-    if(ps.length > n*20){
-        text(ps.length, 100, 100)
-        ps.splice(1000, 100)
-    }
-    */
-    /*
-    for(let i = 0; i < n+1; i++){
-        ps.push(createVector(i*width/n*(random()*0.2+0.8)), -100*random())
-    }
-    */
     for(let i = 0; i < n+1; i++){
         ps.unshift(createVector(-100*random(), i*height/n*(random()*0.2+0.8)))
         //text(ps.length, 100, 100)
         ps.splice(n*20, n*2)
-    }
-    
+    }    
 }
 
 function draw(){
     if(random() < 0.05){
         addBalls()
-    }    
+    }
     background(0,0,0,99)
     for(let i in ps){
         push()
@@ -60,11 +48,6 @@ function draw(){
         ps[i].x += vel.x
         ps[i].y += vel.y
     }
-    saveFrames('~/Desktop/tmp/'+str(frameCount)+'.png', extension, duration, framerate, [callback])
-}
-
-function keyPressed()(){
-    saveFrames('~/Desktop/tmp/'+str(frameCount), 'png', 10, 60)
 }
 
 function columnFunction(x0, y0, p){
