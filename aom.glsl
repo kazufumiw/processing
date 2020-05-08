@@ -5,6 +5,7 @@ precision mediump float;
 uniform vec2 u_resolution; // Canvas size (width,height)
 uniform vec2 u_mouse;      // mouse position in screen pixels
 uniform float u_time;     // Time in seconds since load
+uniform sampler2D tDiffuse;
 
 void main() {
   float u_time = u_time * 0.6;
@@ -29,20 +30,19 @@ void main() {
   float r = 0.0;
   float b = 0.0;
   float g = 0.0;
-  float r1;
 
   //if(uv.x < 0.2 && uv.y < 0.2 && uv.x > -0.2 && uv.y > -0.2){
-  if(distance(uv, vec2(0.0, 0.0)) < 0.25){
+  if(true/*distance(uv, vec2(0.0, 0.0)) < 1.25*/){
     r = sin(uv_color.x - u_time) * 0.5 + 0.5;
     b = sin(uv_color.x-0.01 - u_time) * 0.5 + 0.5;
-    g = sin(uv_color.x+0.001 - u_time) * 0.5 + 0.5;
+    g = sin(uv_color.x+0.01 - u_time) * 0.5 + 0.5;
   }else{
     r = 1.0;
     g = 1.0;
     b = 1.0;
   }
   gl_FragColor = vec4(vec3(
-    17.8*(1.0 - cos(3.14 - 3.14*pow(r, 2.0))),
+    18.0*(1.0 - cos(3.14 - 3.14*pow(r, 2.0))),
     1.7*(1.0 - cos(3.14 - 3.14*pow(g, 8.0))),
     5.0*(1.0 - cos(3.14 - 3.14*pow(b, 6.0)))
     ),
