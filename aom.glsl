@@ -5,7 +5,6 @@ precision mediump float;
 uniform vec2 u_resolution; // Canvas size (width,height)
 uniform vec2 u_mouse;      // mouse position in screen pixels
 uniform float u_time;     // Time in seconds since load
-uniform sampler2D tDiffuse;
 
 void main() {
   float u_time = u_time * 0.6;
@@ -18,11 +17,11 @@ void main() {
   vec2 uv_color = uv;
   for (int s = 0; s < 7; s++) {
     vec2 r;
-    r = vec2(1.0*cos(1.0*uv_color.y * i0 - i4 + u_time / i1), 0.02*sin(uv_color.x * i0 - i4 + u_time / i1)) / i2;
+    r = vec2(1.1*cos(1.0*uv_color.y * i0 - i4 + u_time / i1), 0.01*sin(uv_color.x * i0 - i4 + u_time / i1)) / i2;
     r += vec2(r.y, r.x) * 0.3;
     uv_color.xy += r;
 
-    i0 *= 2.23;
+    i0 *= 2.20;
     i1 *= 1.15;
     i2 *= 1.3;
     i4 += 0.05 + 0.1 * u_time * i1;
@@ -47,4 +46,7 @@ void main() {
     5.0*(1.0 - cos(3.14 - 3.14*pow(b, 6.0)))
     ),
     1.0);
+
+
+
 }
