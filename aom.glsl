@@ -17,7 +17,7 @@ void main() {
   vec2 uv_color = uv;
   for (int s = 0; s < 7; s++) {
     vec2 r;
-    r = vec2(1.1*cos(1.0*uv_color.y * i0 - i4 + u_time / i1), 0.01*sin(uv_color.x * i0 - i4 + u_time / i1)) / i2;
+    r = vec2(1.0*cos(1.0*uv_color.y * i0 - i4 + u_time / i1), 0.01*sin(uv_color.x * i0 - i4 + u_time / i1)) / i2;
     r += vec2(r.y, r.x) * 0.3;
     uv_color.xy += r;
 
