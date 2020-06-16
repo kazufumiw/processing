@@ -17,11 +17,11 @@ void main() {
   vec2 uv_color = uv;
   for (int s = 0; s < 7; s++) {
     vec2 r;
-    r = vec2(1.1*cos(1.0*uv_color.y * i0 - i4 + u_time / i1), 0.01*sin(uv_color.x * i0 - i4 + u_time / i1)) / i2;
+    r = vec2(1.0*cos(1.0*uv_color.y * i0 - i4 + u_time / i1), 0.01*sin(uv_color.x * i0 - i4 + u_time / i1)) / i2;
     r += vec2(r.y, r.x) * 0.3;
     uv_color.xy += r;
 
-    i0 *= 2.20;
+    i0 *= 2.23;
     i1 *= 1.15;
     i2 *= 1.3;
     i4 += 0.05 + 0.1 * u_time * i1;
@@ -31,7 +31,17 @@ void main() {
   float g = 0.0;
 
   //if(uv.x < 0.2 && uv.y < 0.2 && uv.x > -0.2 && uv.y > -0.2){
-  if(true/*distance(uv, vec2(0.0, 0.0)) < 1.25*/){
+  if(
+  (uv.x < -0.25 && uv.y < 0.2 && uv.x > -0.3 && uv.y > -0.4) ||
+  (uv.x < -0.35 && uv.y < 0.3 && uv.x > -0.4 && uv.y > -0.3) ||
+  (uv.x < -0.15 && uv.y < 0.3 && uv.x > -0.2 && uv.y > -0.3) ||
+  (uv.x < -0.05 && uv.y < 0.2 && uv.x > -0.1 && uv.y > -0.4) ||
+  (uv.x < 0.05 && uv.y < 0.3 && uv.x > 0.0 && uv.y > -0.3) ||
+  (uv.x < 0.15 && uv.y < 0.2 && uv.x > 0.1 && uv.y > -0.4) ||
+  (uv.x < 0.25 && uv.y < 0.3 && uv.x > 0.2 && uv.y > -0.3) ||
+  (uv.x < 0.35 && uv.y < 0.2 && uv.x > 0.3 && uv.y > -0.4) ||
+  (uv.x < 0.45 && uv.y < 0.3 && uv.x > 0.4 && uv.y > -0.3)
+  ){
     r = sin(uv_color.x - u_time) * 0.5 + 0.5;
     b = sin(uv_color.x-0.01 - u_time) * 0.5 + 0.5;
     g = sin(uv_color.x+0.01 - u_time) * 0.5 + 0.5;
